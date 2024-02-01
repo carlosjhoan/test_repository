@@ -31,15 +31,13 @@ const destSelect = document.getElementById("div-dest");
         let origValue = origContainer.value;
         const origSelectValue = origSelect.value;
         const destSelectValue = destSelect.value;
-        console.log(origSelectValue)
         if(origSelectValue === "none" & destSelectValue === "none") {
             alert("Choose conversion")
         } 
         origValue = origValue / json.rates[origSelectValue];
         console.log(origValue)
         const convert = origValue / json.rates[destSelectValue];
-        console.log(convert)
-        destContainer.value = convert.toFixed(1)
+        destContainer.value = convert.toFixed(2)
     })
     
     destContainer.addEventListener("input", () => {
@@ -51,10 +49,8 @@ const destSelect = document.getElementById("div-dest");
             alert("Choose conversion")
         } 
         destValue = destValue / json.rates[`${destSelectValue}`];
-        console.log(destValue)
         const convert = destValue / json.rates[`${origSelectValue}`];
-        console.log(convert)
-        origContainer.value = convert.toFixed(1)
+        origContainer.value = convert.toFixed(2)
     })
 })();
 
