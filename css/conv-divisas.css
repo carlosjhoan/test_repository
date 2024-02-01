@@ -2,16 +2,20 @@
 *{
     font-family: 'Kanit', sans-serif;
 }
+h1{
+    color: rgb(0, 0, 0);
+}
 .container{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 40%;
+    width: auto;
     margin: 0 auto;
     height: auto;
-    border: solid 1px black;
     border-radius: 10px;padding: 20px;
+    background-color: rgb(239, 239, 239);
+    box-shadow: 2px 2px 2px 2px grey;
 }
 .titulos{
 
@@ -27,7 +31,12 @@
 }
 #moneda{
     position: relative;
-    left: 100px;
+    left: 150px;
+  
+}
+#cantidad{
+    position: relative;
+    left: 50px;
 }
 .conversor{
     display: flex;
@@ -43,7 +52,8 @@
     display: flex;
     flex-direction: column;
     margin: 10px;
-    gap: 10px;
+    gap: 5px;
+    font-size: 17px;
 }
 
 --------------------------
@@ -55,12 +65,12 @@
 
 }
 #cant-orig,#div-orig{
-   
+    background-color: #fefce0;
     border: none;
     border: solid 1px;
 }
 #cant-dest,#div-dest{
-
+   background-color: #dfedd6; 
    border: none;
     border: solid 1px;
 }
@@ -77,7 +87,7 @@
     position: relative;
     top: 70px;
     right: 230px;
-    background-color: blue;
+    background-color: 0844a4;
     border-radius: 5px;
     border: none;
 }
@@ -91,7 +101,7 @@
     cursor: pointer;
 }
 #guardar:hover{
-    background-color: rgb(0, 0, 143);
+    background-color: rgb(0, 143, 110);
 }
 @media (min-width: 180px) and (max-width:1024px){
 
@@ -103,7 +113,6 @@
         width: auto;
         margin: 0 auto;
         height: auto;
-        border: solid 1px black;
         border-radius: 10px;
         padding: 20px;
     }
