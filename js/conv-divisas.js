@@ -23,6 +23,38 @@ const destSelect = document.getElementById("div-dest");
         element.textContent = key;
         destSelect.appendChild(element);
     }
+
+
+    origContainer.addEventListener("input", () => {
+        let origValue = origContainer.value;
+        const origSelectValue = origSelect.value;
+        const destSelectValue = destSelect.value;
+        console.log(origSelectValue)
+        if(origSelectValue === "none" & destSelectValue === "none") {
+            alert("Choose conversion")
+        } 
+        origValue = origValue / json.rates[origSelectValue];
+        console.log(origValue)
+        const convert = origValue / json.rates[destSelectValue];
+        console.log(convert)
+        destContainer.value = convert.toFixed(1)
+    })
+    
+    destContainer.addEventListener("input", () => {
+        let destValue = destContainer.value;
+        const origSelectValue = origSelect.value;
+        const destSelectValue = destSelect.value;
+
+        if(origSelectValue === "none" & destSelectValue === "none") {
+            alert("Choose conversion")
+        } 
+        destValue = destValue / json.rates[`${destSelectValue}`];
+        console.log(destValue)
+        const convert = destValue / json.rates[`${origSelectValue}`];
+        console.log(convert)
+        origContainer.value = convert.toFixed(1)
+    })
 })();
+
 
 
